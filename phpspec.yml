@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: App
-        psr4_prefix: App
+        namespace: autoservice
+        psr4_prefix: autoservice
         src_path: app

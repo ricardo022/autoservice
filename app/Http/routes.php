@@ -1,4 +1,4 @@
-<?php
+<?php use autoservice\Http\entities\County;
 
 /*
 |--------------------------------------------------------------------------
@@ -11,7 +11,15 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+//Route::get('/', 'WelcomeController@index');
+Route::get('/', function() {
+   $departamentos = County::all();
+    return view("counties")->with(compact("departamentos"));
+});
+
+Route::resource("departamentos","CountyController");
+
+Route::resource("city","CityController");
 
 Route::get('home', 'HomeController@index');
 
